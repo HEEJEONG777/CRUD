@@ -1,0 +1,22 @@
+{% extends 'blog/layout.html' %}
+{% load static %}
+{% block content %}
+   <h2>board</h2>
+
+   {% for post in nuguri %}
+      <p>title : {{ post.title }}</p>
+      <p>body : {{ post.body }}</p>
+      <p>write at {{ post.pub_date }}</p> 
+
+      <hr>
+   {% endfor %}
+
+   {% for hihi in human %}
+      <p>name : {{ hihi.name }}</p>
+      <p>food : {{ hihi.food }}</p>
+      <a href="{% url 'update' pk=hihi.pk %}"> 수정하기 </a>
+      <a href="{% url 'delete' pk=hihi.pk %}"> 삭제하기 </a>
+   {% endfor %}
+
+
+{% endblock %}

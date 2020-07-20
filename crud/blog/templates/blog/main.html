@@ -1,0 +1,33 @@
+{% extends 'blog/layout.html' %}
+{% load static %}
+{% block content %}
+<header>
+    <div class="view intro-2">
+    
+    <div class="full-bg-img">
+        
+      <div class="mask rgba-black-strong flex-center">
+        <div class="container">
+          <div class="white-text text-center wow fadeInUp">
+            <img src="{%static 'blog/img/dd.jpg'%}">
+            <h2>This main</h2>
+            <h5>뷔</h5>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<form method="POST">
+  {% csrf_token %}
+  <table>
+    {{form.as_table}}
+  </table>
+  <input type="submit" value="제출하기">
+</form>
+
+
+
+{% endblock %}
